@@ -1334,6 +1334,7 @@ function install_monasca_agent {
     MONASCA_AGENT_SRC_DIST=$(ls -td "${MONASCA_BASE}"/monasca-agent/dist/monasca-agent-*.tar.gz | head -1)
 
     (cd /opt/monasca ; sudo -H ./bin/pip install $MONASCA_AGENT_SRC_DIST)
+    (cd /opt/monasca ; sudo -H ./bin/pip install psutil)
 
     sudo mkdir -p /etc/monasca/agent/conf.d || true
 
